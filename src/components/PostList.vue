@@ -1,15 +1,4 @@
 <template>
-    <div>
-      <h5>Create New Post</h5>
-      <div class="form-group">
-        <label for="postTitle">Title</label>
-        <input type="text" class="form-control" v-model="newPost.title" id="postTitle" placeholder="Enter title">
-      </div>
-      <div class="form-group">
-        <label for="postBody">Body</label>
-        <textarea class="form-control" v-model="newPost.body" id="postBody" rows="3" placeholder="Enter body"></textarea>
-        <button class="btn btn-primary" @click="createPost">Create Post</button>
-      </div>
       <div class="form-group">
         <label for="postUser">User</label>
         <select class="form-control" v-model="newPost.userId" id="postUser" @change="fetchPosts">
@@ -23,7 +12,6 @@
       <div v-else>
         <PostItem v-for="post in posts" :key="post.id" :post="post" :users="users" />
       </div>
-    </div>
   </template>
   
   <script>
